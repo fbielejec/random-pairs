@@ -1,4 +1,5 @@
 (ns random-pairs.system
+  (:gen-class)
   (:require [com.stuartsierra.component :as component]
             [clojure.tools.logging :as logging]
             [random-pairs.server :as server]))
