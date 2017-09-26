@@ -15,7 +15,7 @@
       (if server
         this
         (do
-          (logging/info ::server-start (str "Starting Server component" " host " host " port " port))
+          (logging/info ::server-start (str "Starting Server component" " host: " host " port: " port))
           (let [server (jetty/run-jetty (routing/web-handler database) {:host host :port port :join? false})]
             (assoc this :server server))))
       (catch Throwable e
