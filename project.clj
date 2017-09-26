@@ -24,4 +24,6 @@
                    :plugins [[lein-kibit "0.0.8"]
                              [lein-ancient "0.6.10"]
                              [cider/cider-nrepl "0.14.0"]]}
-             :uberjar {:aot :all}})
+             :uberjar {:aot :all
+                       :uberjar-name "random-pairs.jar"
+                       :main random-pairs.system}})

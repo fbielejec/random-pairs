@@ -5,8 +5,7 @@
 
 (defn system-map []
   (component/system-map
-   :server (server/new {:host "localhost"
-                        :port 8080})))
+   :server (server/new)))
 
 (def dependency-map
   {})
