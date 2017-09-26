@@ -12,8 +12,8 @@
                  [ring/ring-jetty-adapter "1.6.1"]
                  [ring-middleware-format "0.7.2"]
                  [ring-cors "0.1.11"]]
-
   :main ^:skip-aot random-pairs.system
+  :uberjar-name "random-pairs.jar"
   :repl-options {:init-ns ^:skip-aot user}
   :source-paths ["src/clj/"]
   :resource-paths ["resources"]

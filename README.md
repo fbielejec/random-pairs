@@ -2,4 +2,4 @@
 
 ## Heroku deployed app
 
-https://git.heroku.com/random-pairs0x.git
+https://random-pairs0x.herokuapp.com/
