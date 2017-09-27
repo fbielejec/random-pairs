@@ -30,4 +30,4 @@
 (defn -main [& args]
   (let [system (create-system)]
     (start system)
-    (logging/info ::stop "Application fully functional")))
+    (logging/info ::main "Application fully functional")))

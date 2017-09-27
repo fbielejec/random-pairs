@@ -1,4 +1,6 @@
+# Random-pairs
 
+Randomly pairs elements of a vector
 
 ## Heroku deployed app
 
