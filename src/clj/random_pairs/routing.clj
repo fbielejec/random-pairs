@@ -33,4 +33,4 @@
        (route/not-found "Page not found"))
       (wrap-decode-request-body)
       (cors/wrap-cors :access-control-allow-origin [#".*"]
-                      :access-control-allow-methods [:get])))
+                      :access-control-allow-methods [:get :post])))

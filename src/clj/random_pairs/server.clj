@@ -31,7 +31,5 @@
         (.stop server)
         (assoc this :server nil)))))
 
-(defn new []
-  (let [host (or (System/getenv "HOST") "0.0.0.0")
-        port (or (Integer. (System/getenv "PORT")) 8080)]
-    (map->Server {:host host :port port :server nil})))
+(defn new [{:keys [:host :port]}]
+  (map->Server {:host host :port port :server nil}))
