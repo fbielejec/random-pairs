@@ -16,7 +16,7 @@
         this
         (do
           (logging/info ::server-start (str "Starting Server component - " " host: " host " port: " port))
-          (let [server (jetty/run-jetty (routing/web-handler database) {:host host :port port :join? false})]
+          (let [server (jetty/run-jetty (routing/web-handler) {:host host :port port :join? false})]
             (assoc this :server server))))
       (catch Throwable e
         (let [stack-trace (utils/with-err-str (.printStackTrace e))]

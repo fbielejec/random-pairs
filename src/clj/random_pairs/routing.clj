@@ -27,13 +27,7 @@
           handler)
       (handler request))))
 
-(defn wrap-database [handler database]
-  (fn [request]
-    (-> request
-        (assoc :database database)
-        handler)))
-
-(defn web-handler [database]
+(defn web-handler []
   (-> (compojure/routes
        (GET "/api/pairs" [] #(make-json-response (api/get-pairs %)))
        (route/not-found "Page not found"))
