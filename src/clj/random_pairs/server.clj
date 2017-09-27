@@ -15,8 +15,8 @@
       (if server
         this
         (do
-          (logging/info ::server-start (str "Starting Server component - " " host: " host " port: " port))
-          (let [server (jetty/run-jetty (routing/web-handler) {:port port :join? false})]
+          (logging/info ::server-start (str "Starting Server component - " "host: " host " port: " port))
+          (let [server (jetty/run-jetty (routing/web-handler) {:host host :port port :join? false})]
             (assoc this :server server))))
       (catch Throwable e
         (let [stack-trace (utils/with-err-str (.printStackTrace e))]
@@ -32,6 +32,6 @@
         (assoc this :server nil)))))
 
 (defn new []
-  (let [host (or (System/getenv "HOST") "localhost")
+  (let [host (or (System/getenv "HOST") "0.0.0.0")
         port (or (Integer. (System/getenv "PORT")) 8080)]
     (map->Server {:host host :port port :server nil})))
