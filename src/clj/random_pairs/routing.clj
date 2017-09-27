@@ -29,7 +29,7 @@
 
 (defn web-handler []
   (-> (compojure/routes
-       (GET "/api/pairs" [] #(make-json-response (api/get-pairs %)))
+       (POST "/api/names" [] #(make-json-response (api/get-pairs %)))
        (route/not-found "Page not found"))
       (wrap-decode-request-body)
       (cors/wrap-cors :access-control-allow-origin [#".*"]
