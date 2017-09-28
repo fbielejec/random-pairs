@@ -7,7 +7,7 @@
 (defn system-map []
   (component/system-map
    :server (server/new {:host (or (System/getenv "HOST") "0.0.0.0")
-                        :port (or (Integer. (System/getenv "PORT")) 8080)})))
+                        :port (or (System/getenv "PORT") 8080)})))
 
 (def dependency-map
   {})

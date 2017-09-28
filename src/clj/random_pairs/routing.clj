@@ -6,7 +6,8 @@
             [compojure.route :as route]
             [ring.middleware.cors :as cors]
             [clojure.tools.logging :as logging]
-            [random-pairs.api :as api]))
+            [random-pairs.api :as api]
+            [random-pairs.views.home :as home]))
 
 (defn make-json-response [data & [status]]
   {:status (or status 200)
@@ -29,6 +30,7 @@
 
 (defn web-handler []
   (-> (compojure/routes
+       (GET "/" [] (home/application "Random-pairs0x" (home/index)))
        (POST "/api/names" [] #(make-json-response (api/get-pairs %)))
        (route/not-found "Page not found"))
       (wrap-decode-request-body)

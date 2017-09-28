@@ -24,4 +24,3 @@
       (do
         (logging/error (.getMessage e))
         (make-response +http-internal-server-error+ +internal-server-error+)))))
-

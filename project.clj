@@ -7,6 +7,7 @@
                  [com.stuartsierra/component "0.3.0"]
                  [org.clojure/tools.logging "0.4.0"]
                  [ch.qos.logback/logback-classic "1.1.3"]
+                 [hiccup "1.0.5"]
                  [compojure "1.6.0"]
                  [ring/ring-core "1.6.1"]
                  [ring/ring-jetty-adapter "1.6.1"]
@@ -15,15 +16,11 @@
   :min-lein-version "2.0.0"
   :main ^:skip-aot random-pairs.system
   :repl-options {:init-ns ^:skip-aot user}
-  :source-paths ["src/clj/"]
+  :source-paths ["src/clj"]
   :resource-paths ["resources"]
-  :profiles {:dev {:resource-paths ["config/dev"]
-                   :source-paths ["dev"]
+  :profiles {:dev {:source-paths ["dev"]
                    :dependencies [[ring/ring-mock "0.3.0"]
-                                  [org.clojure/tools.namespace "0.2.10"]]
-                   :plugins [[lein-kibit "0.0.8"]
-                             [lein-ancient "0.6.10"]
-                             [cider/cider-nrepl "0.14.0"]]}
+                                  [org.clojure/tools.namespace "0.2.10"]]}
              :uberjar {:aot :all
                        :uberjar-name "random-pairs.jar"
                        :main random-pairs.system}})
