@@ -10,7 +10,7 @@
                         :port (let [system-port (System/getenv "PORT")]
                                 (if-not system-port
                                   8080
-                                  (.Integer system-port)))})))
+                                  (Integer. system-port)))})))
 
 (def dependency-map
   {})
