@@ -2,7 +2,8 @@
   (:gen-class)
   (:require [com.stuartsierra.component :as component]
             [clojure.tools.logging :as logging]
-            [random-pairs.server :as server]))
+            [random-pairs.server :as server]
+            [random-pairs.scheduler :as scheduler]))
 
 (defn system-map []
   (component/system-map
@@ -10,7 +11,8 @@
                         :port (let [system-port (System/getenv "PORT")]
                                 (if-not system-port
                                   8080
-                                  (Integer. system-port)))})))
+                                  (Integer. system-port)))})
+   :scheduler (scheduler/new)))
 
 (def dependency-map
   {})
