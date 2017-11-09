@@ -9,6 +9,7 @@
                  [ch.qos.logback/logback-classic "1.1.3"]
                  [hiccup "1.0.5"]
                  [compojure "1.6.0"]
+                 [clj-http "3.7.0"]
                  [ring/ring-core "1.6.1"]
                  [ring/ring-jetty-adapter "1.6.1"]
                  [ring-middleware-format "0.7.2"]
