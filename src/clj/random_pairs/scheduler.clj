@@ -10,9 +10,7 @@
 (defn set-interval [callback ms]
   (future (while true (do (Thread/sleep ms) (callback)))))
 
-;; TODO: get on the heroku app itself
 (defrecord Scheduler
-    "Pokes the free Heroku Dyno every 10 minutes so that it does not go to sleep (sleep inteval is 30 minutes on free plan."
   [job]
 
   component/Lifecycle

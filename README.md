@@ -6,6 +6,10 @@ Randomly pairs elements of a vector
 
 https://random-pairs0x.herokuapp.com/
 
+## Push to prod
+
+git push heroku master
+
 ## Production logs
 
 ```
