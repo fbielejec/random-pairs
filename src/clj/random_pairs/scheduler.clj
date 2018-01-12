@@ -21,7 +21,7 @@
         this
         (do
           (logging/info ::scheduler-start (str "Starting scheduler component"))
-          (assoc this :job (set-interval #(http/get "https://random-pairs0x.herokuapp.com/") 600000))))
+          (assoc this :job (set-interval #(http/get "https://random-pairs0x.herokuapp.com/") 1.8e+6))))
       (catch Throwable e
         (let [stack-trace (utils/with-err-str (.printStackTrace e))]
           (logging/fatal ::server-start (str "A fatal error occured while starting scheduler: " stack-trace))
